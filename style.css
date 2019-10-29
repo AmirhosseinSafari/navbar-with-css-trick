@@ -1,0 +1,68 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: #000714;
+}
+
+
+.list{
+    margin: 0px;
+    padding: 0;
+    display: flex;
+    list-style: none;
+}
+
+.list , .items{
+    list-style: none;
+    margin: 0 30px;
+}
+
+.list .items .links{
+    padding: 5px;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    font-size: 22px;
+    font-weight: 600;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: aliceblue;
+    transition: .5s;
+}
+
+.list:hover .items .links{
+    transform: scale(1.5);
+    filter: blur(1.5px);
+    opacity: .7;
+}
+
+.list .items .links:hover{
+    transform: scale(2);
+    filter: blur(0);
+    opacity: 1;
+}
+
+.list .items .links::before{
+    content: '';
+    top:0;
+    left:0;
+    background: #b122c4;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: transform .5s;
+    transform-origin: right;
+    transform: scaleX(0);
+    z-index: -1;
+    border-radius: 2px;
+}
+
+.list .items .links:hover::before{
+    transition: transform .5s;
+    transform-origin: left;
+    transform: scaleX(1);
+}
